@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Agregar Folio</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="delito">Delito:</label>
+    <select name="delito" required>
+      {% for delito in delitos %}
+        <option value="{{ delito.id }}">{{ delito.nombre }}</option>
+      {% endfor %}
+    </select><br><br>
+
+    <label for="c2">C2:</label>
+    <select name="c2" required>
+      {% for c2 in c2s %}
+        <option value="{{ c2.id }}">{{ c2.nombre }}</option>
+      {% endfor %}
+    </select><br><br>
+
+    <label for="colonia">Colonia:</label>
+    <select name="colonia" required>
+      {% for colonia in colonias %}
+        <option value="{{ colonia.id }}">{{ colonia.nombre }}</option>
+      {% endfor %}
+    </select><br><br>
+
+    <label for="fecha_evento">Fecha del Evento:</label>
+    <input type="date" name="fecha_evento" required><br><br>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-secondary" onclick="location.href='{% url 'videos:agregar_folio' video_id %}'">Agregar otro Folio</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Videos</h1>
+  <div>
+    <a href="{% url 'videos:agregar_video' %}" class="btn btn-primary">Agregar video</a>
+    <a href="{% url 'videos:buscar' %}" class="btn btn-secondary">Buscar</a>
+  </div>
+{% endblock %}

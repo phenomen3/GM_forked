@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Agregar Folio</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" name="save">Guardar</button>
+    <button type="submit" name="add_another">Agregar otro folio</button>
+  </form>
+{% endblock %}

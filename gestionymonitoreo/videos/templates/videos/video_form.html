@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Agregar Video</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="nombre">Nombre del Video:</label>
+    <input type="text" name="nombre" required><br><br>
+
+    <label for="url">URL:</label>
+    <input type="text" name="url" required><br><br>
+
+    <label for="fecha_publicacion">Fecha de Publicación:</label>
+    <input type="date" name="fecha_publicacion" required><br><br>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </form>
+{% endblock %}

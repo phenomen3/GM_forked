@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Resultados de la búsqueda</h2>
+  {% if results %}
+    <ul>
+      {% for result in results %}
+        <li>
+          {% if result.video %}
+            <a href="{% url 'videos:detalle_video' result.video.pk %}">{{ result.video.nombre }}</a>
+          {% else %}
+            <a href="{% url 'videos:detalle_folio' result.pk %}">{{ result.delito }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No se encontraron resultados</p>
+  {% endif %}
+{% endblock %}
