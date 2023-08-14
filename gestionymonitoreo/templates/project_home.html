@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<h1>Bienvenido a mi Proyecto</h1>
+<a href="{% url 'mirs_home' %}">Aplicación 1</a>
+{% comment %} <a href="{% url 'app2_home' %}">Aplicación 2</a>
+<a href="{% url 'app3_home' %}">Aplicación 3</a> {% endcomment %}
+{% endblock %}

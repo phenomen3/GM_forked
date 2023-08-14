@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Ingresar Nueva Noticia{% endblock %}
+
+{% block content %}
+<h1>Ingresar Nueva Noticia</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="reset" class="btn btn-secondary">Limpiar</button>
+</form>
+
+<hr>
+
+<h2>Noticias Recientes</h2>
+<ul>
+    {% for noticia in noticias_recientes %}
+    <li>{{ noticia.titulo }} - {{ noticia.fecha }}</li>
+    {% endfor %}
+</ul>
+
+<hr>
+
+<h2>Búsqueda de Noticias</h2>
+<form method="get" action="{% url 'noticias_search' %}">
+    <input type="text" name="q" placeholder="Buscar noticias...">
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+{% if resultados %}
+<h3>Resultados de la búsqueda:</h3>
+<ul>
+    {% for noticia in resultados %}
+    <li>{{ noticia.titulo }} - {{ noticia.fecha }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}

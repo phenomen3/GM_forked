@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}MIRS{% endblock %}
+
+{% block content %}
+<h1>Bienvenido a MIRS</h1>
+{% comment %} <a href="{% url 'folios' %}" class="btn btn-primary">Ir a Folios</a> {% endcomment %}
+<a href="{% url 'noticias_form' %}" class="btn btn-primary">Ir a Noticias</a>
+{% endblock %}

@@ -1,0 +1,27 @@
+/* admin.css */
+
+/* Cambiar el color de fondo del encabezado */
+#header {
+    background-color: #333;
+    color: white;
+}
+
+/* Cambiar el color de fondo de las filas de la tabla */
+.changeform-row,
+.change-list tbody tr {
+    background-color: #f5f5f5;
+}
+
+/* Cambiar el color de los enlaces */
+a {
+    color: #007bff;
+}
+
+/* Cambiar el color de los botones */
+input[type="submit"],
+input[type="button"],
+.button {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}

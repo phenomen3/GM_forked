@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Medio, Canal, Estacion, ProgramaRadio, ProgramaTV, RedSocial, Tema, Subtema, Tipo, Submotivo, Subtipo, Mencion, Noticia
 
+
 # registro de los modelos de 
 admin.site.register(Medio)
 admin.site.register(Canal)
